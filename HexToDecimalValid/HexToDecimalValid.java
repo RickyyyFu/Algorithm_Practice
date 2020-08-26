@@ -18,15 +18,15 @@ public class HexToDecimalValid {
 				System.out.println("INVALID");
 				return "INVALID";
 			}
-			String first_six = hex_str.substring(0, 6);
-			String last_two = hex_str.substring(6);
-			int decimal = Integer.parseInt(first_six, 16);
+			String first_two = hex_str.substring(0, 2);
+			String last_six = hex_str.substring(2);
+			int decimal = Integer.parseInt(last_six, 16);
 			int sum = 0;
 			while(decimal > 0) {
 				sum += (decimal % 10);
 				decimal /= 10;
 			}
-			if(sum == Integer.parseInt(last_two, 16)) {
+			if(sum == Integer.parseInt(first_two, 16)) {
 				System.out.println("VALID");
 				return "VALID";
 			}
