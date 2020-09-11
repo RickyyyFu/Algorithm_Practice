@@ -1,4 +1,4 @@
-package StudentCourseOverlap;
+package Student_Course;
 
 import java.util.*;
 
