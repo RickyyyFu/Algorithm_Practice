@@ -4,7 +4,7 @@ public class ReverseIntegerDigit {
 	public static int reverseInt(int num) {
 		char[] chs = String.valueOf(num).toCharArray();
 		
-		for(int i = 0; i < chs.length; i++) {
+		for(int i = 0; i < chs.length; i+=2) {
 			if(i+1 == chs.length) continue;
 			char tmp = chs[i];
 			chs[i] = chs[i+1];
@@ -17,5 +17,7 @@ public class ReverseIntegerDigit {
 	public static void main(String[] args) {
 		System.out.println(reverseInt(123));
 		System.out.println(reverseInt(1023));
+		System.out.println(reverseInt(123456));
+		System.out.println(reverseInt(72328));
 	}
 }
