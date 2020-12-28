@@ -2,7 +2,9 @@ package CandyCrash;
 
 import java.util.Stack;
 
-// stack<Pair<char, int>>
+// brute force - O(n^2)	O(1)
+
+// stack<Pair<char, int>>	O(n) O(n)
 public class CandyCrush_1D {
 	static class Pair{
 		char c;
