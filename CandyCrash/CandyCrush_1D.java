@@ -42,7 +42,12 @@ public class CandyCrush_1D {
 		if(stack.isEmpty()) return "";
 		StringBuilder sb = new StringBuilder();
 		while(!stack.isEmpty()) {
-			sb.insert(0, stack.pop().c);
+			Pair p = stack.pop();
+			char c = p.c;
+			int cnt = p.cnt;
+			for(int k = cnt; k > 0; k--) {
+				sb.insert(0, c);
+			}
 		}
 		
 		return sb.toString();
@@ -50,7 +55,7 @@ public class CandyCrush_1D {
 	
 	public static void main(String[] args) {
 		System.out.println(remove("")); //
-		System.out.println(remove("abc")); //abc
+		System.out.println(remove("abcc")); //abcc
 		System.out.println(remove("aaa")); //
 		System.out.println(remove("aaaabbbc")); //c
 		System.out.println(remove("aabbbacd")); //cd
