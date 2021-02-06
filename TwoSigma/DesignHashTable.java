@@ -88,9 +88,7 @@ public class DesignHashTable {
 	        Node<K, V> newElementNode = new Node<K, V>(key, value); 
 	        // The head node at the index 
 	        head = bucket.get(bucketIdx); 
-	        // the new node is inserted 
-	        // by making it the head 
-	        // and it's next is the previous head 
+	        // the new node is inserted by making it the head and it's next is the previous head 
 	        newElementNode.next = head;
 	        bucket.set(bucketIdx, newElementNode); 
 	  
