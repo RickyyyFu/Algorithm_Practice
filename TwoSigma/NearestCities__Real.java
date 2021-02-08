@@ -49,7 +49,7 @@ public class NearestCities__Real {
 					String str = p_name.get(s);
 					System.out.println(str);
 					if(higher-pos[1] == min) {
-						if(ans.equals("None") || str.compareTo(ans) < 0) res.set(i, str);
+						if(ans.equals("NONE") || str.compareTo(ans) < 0) res.set(i, str);
 					}
 					if(higher-pos[1] < min) {
 						min = higher-pos[1];
@@ -62,7 +62,7 @@ public class NearestCities__Real {
 					String str = p_name.get(s);
 					System.out.println(str);
 					if(pos[1]-lower == min) {
-						if(ans.equals("None") || str.compareTo(ans) < 0) res.set(i, str);
+						if(ans.equals("NONE") || str.compareTo(ans) < 0) res.set(i, str);
 					}
 					if(pos[1]-lower < min) {
 						min = pos[1]-lower;
@@ -81,7 +81,7 @@ public class NearestCities__Real {
 					String str = p_name.get(s);
 					System.out.println(str);
 					if(higher-pos[0] == min) {
-						if(ans.equals("None") || str.compareTo(ans) < 0) res.set(i, str);
+						if(ans.equals("NONE") || str.compareTo(ans) < 0) res.set(i, str);
 					}
 					if(higher-pos[0] < min) {
 						min = higher-pos[0];
@@ -94,7 +94,7 @@ public class NearestCities__Real {
 					String str = p_name.get(s);
 					System.out.println(str);
 					if(pos[0]-lower == min) {
-						if(ans.equals("None") || str.compareTo(ans) < 0) res.set(i, str);
+						if(ans.equals("NONE") || str.compareTo(ans) < 0) res.set(i, str);
 					}
 					if(pos[0]-lower < min) {
 						min = pos[0]-lower;

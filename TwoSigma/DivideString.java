@@ -10,7 +10,7 @@ public class DivideString {
 		StringBuilder sb = new StringBuilder();
 		int carry = 0;
 		for(int i = 0; i < n; i++) {
-			int x = carry*10 + Character.getNumericValue(dividend[i]);
+			int x = carry*10 + dividend[i] - '0';
 			sb.append(x / divisor);
 			carry = x % divisor;
 		}

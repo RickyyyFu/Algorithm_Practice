@@ -13,16 +13,14 @@ public class Connect6 {
 	Random r = new Random();
 	
 	public Connect6(int k) {
-		this.grid = new int[k][k];
-		this.T = true;
-		this.n = k;
-		this.round = 0;
+		reset(k);
 	}
 	
 	public void reset(int k) {
 		this.grid = new int[k][k];
 		// or set 0s
 		this.T = true;
+		this.n = k;
 		this.round = 0;
 	}
 	
@@ -181,50 +179,5 @@ public class Connect6 {
 //		Random r = new Random();
 		Connect6 game = new Connect6(100);
 		game.play();
-		
-//		while(true) {
-//			
-//		if(game.round == 0) {
-//			// placeblack;
-//			// T = !T
-//			int x = r.nextInt(game.n-1);
-//			int y = r.nextInt(game.n-1);
-//			if(game.placeBlack(x, y)) {
-//				System.out.println("black win");
-//				return;
-//			}
-//			game.T = !game.T;
-//		}
-//		else {
-//		// constraint end?  full or win?
-//		// if without win? if put pieces at same pos always
-//			// black
-//			if(game.T) {
-//				System.out.println("put black");
-//				for(int k = 0; k < 2; k++) {
-//					int x = r.nextInt(game.n-1);
-//					int y = r.nextInt(game.n-1);
-//					if(game.placeBlack(x, y)) {
-//						System.out.println("black win");
-//						return;
-//					}
-//				}
-//				game.T = !game.T;
-//			}
-//			// white
-//			else {
-//				System.out.println("put white");
-//				for(int k = 0; k < 2; k++) {
-//					int x = r.nextInt(game.n-1);
-//					int y = r.nextInt(game.n-1);
-//					if(game.placeWhite(x, y)) {
-//						System.out.println("white win");
-//						return;
-//					}
-//				}
-//				game.T = !game.T;
-//			}
-//		}
-		
 	}
 }

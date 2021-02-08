@@ -28,10 +28,11 @@ import java.util.*;
 
 public class DesignHashTable {
 	class Map<K, V>{
+		@SuppressWarnings("hiding")
 		class Node<K, V>{
 			K key;
 			V value;
-			Node next;
+			Node<K, V> next;
 			
 			public Node(K k, V v) {
 				this.key = k;
