@@ -27,7 +27,7 @@ public class StockGame {
 		}
 		
 		Stack<Integer> s2 = new Stack<Integer>();
-		// descending
+		// ascending
 		for(int i = 0; i < p.length; i++) {
 			while(!s2.isEmpty() && p[s2.peek()] >= p[i]) {
 				s2.pop();
