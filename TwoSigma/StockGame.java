@@ -3,7 +3,7 @@ package TwoSigma;
 import java.util.*;
 
 /**
-	if only find one day's nearest day, extend(<- i ->)  O(n)
+ *	if only find one day's nearest day, extend(<- i ->)  O(n)
  */
 
 // return array
