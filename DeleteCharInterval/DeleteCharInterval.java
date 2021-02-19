@@ -10,26 +10,18 @@ public class DeleteCharInterval {
 	public static String deleteChar(String s, int[][] intervals) {
 		if(s == null || s.length() == 0 || intervals == null || intervals.length == 0) return s;
 		
-		// merge intervals
-		PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> (a[0]==b[0]) ? a[0]-b[0] : a[1]-b[1]);
-		for(int[] interval : intervals) pq.offer(interval);
+		// sort
+		Arrays.sort(intervals, (a, b) -> (a[0]==b[0]) ? a[0]-b[0] : a[1]-b[1]);
 		
-		int[] cur = pq.poll();
-		int start = cur[0];
-		int end = cur[1];
 		List<int[]> list = new ArrayList<>();
-		while(!pq.isEmpty()) {
-			cur = pq.poll();
-			if(cur[0] <= end) {
-				end = cur[1];
+		for(int[] interval : intervals) {
+			if(list.isEmpty() || list.get(list.size()-1)[1] < interval[0]) {
+				list.add(interval);
 			}
 			else {
-				list.add(new int[] {start, end});
-				start = cur[0];
-				end = cur[1];
+				list.get(list.size()-1)[1] = Math.max(list.get(list.size()-1)[1], interval[1]);
 			}
 		}
-		list.add(new int[] {start, end});
 		
 		int start_idx = 0;
 		StringBuilder sb = new StringBuilder();
@@ -47,7 +39,9 @@ public class DeleteCharInterval {
 		System.out.println(deleteChar("abcdefghi", i1)); //ai
 		
 		int[][] i2 = {{1,2}, {3,6}, {4,7}};
+		int[][] i21 = {{1,2}, {3,6}, {4,7}, {5,6}};
 		System.out.println(deleteChar("aaaaaaaaaa", i2)); //aaa
+		System.out.println(deleteChar("aaaaaaaaaa", i21)); //aaa
 		
 		int[][] i3 = {{1,2}, {3,6}, {4,7}};
 		System.out.println(deleteChar("a", i3)); // a
